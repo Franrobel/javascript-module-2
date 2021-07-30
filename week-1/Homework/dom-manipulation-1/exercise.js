@@ -11,43 +11,88 @@ Write JavaScript below that logs:
     3. the element with id "jumbotron-text"
     --> should log the "#jumbotron-text" node
 
-    4. all the "p" elements of contained inside  the .primary-content element node
+    4. all the "p" elements contained inside  the .primary-content element node
     --> should log a list of nodes with a length of 3
 
 */
+let pElements = document.querySelectorAll('p')
+console.log(pElements)
+
+const firstDiv = document.querySelector('div')
+console.log(firstDiv)
+
+const idJumbotronText = document.querySelector('#jumbotron-text')
+console.log(idJumbotronText)
+
+const pCprimaryContent = document.querySelectorAll('.primary-content p') 
+//const pCprimaryContent = document.querySelector('.primary-content').querySelectorAll('p')
+
+console.log(pCprimaryContent)
+
+
+
 
 
 /*
 Task 2
 ======
 
-When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
+When a user clicks the 'ALERT' button, an alert box should pop up with the text 
+"Thanks for visiting Bikes for Refugees!"
 */
+let alertBtn = document.querySelector("#alertBtn")
+alertBtn.addEventListener('click', (event) => 
+ alert('Thanks for visiting Bikes for Refugees'));
 
+ 
 
 /*
 Task 3
 =======
 
-Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
+Write JavaScript below that changes the background colour of the page when 
+the 'Change colour' button is clicked.
 */
+let changeColorBtn= document.querySelector("#bgrChangeBtn")
 
+changeColorBtn.addEventListener('click', (event) => {
+const assignBody = document.querySelector('body')
+assignBody.style.backgroundColor = '#eceb8a'
+
+});
 
 /*
 Task 4
 ======
 
-When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
+When a user clicks the ‘Add some text’ button, a new paragraph 
+should be added inside the section that says “LEARN MORE”
 */
+const addSomeTextBtn = document.querySelector("#TextBtn")
 
+addSomeTextBtn.addEventListener('click', (event) =>{
+    event.preventDefault()
+    const whereIsShown = document.querySelector('#mainArticles')
+    const paragraph =document.createElement('p') 
+    paragraph.textContent = 'Un parrafo nuevo para la seccion LEARN MORE'
+    whereIsShown.appendChild(paragraph)
+})
 
 
 /*
 Task 5
 ======
 
-When the 'Larger links!' button is clicked, the text of all links on the page should increase.
+When the 'Larger links!' button is clicked, the text of all links 
+on the page should increase.
 */
+const largerLinks = document.querySelector('#largerLinksBtn')
+
+largerLinks.addEventListener('click', (event) =>{
+    const allLinks = document.querySelectorAll('a')
+    allLinks.style.fontSize = '40px'
+  
+})
 
 
 /*
@@ -67,4 +112,4 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-
+//let colors = [hbs]
