@@ -25,14 +25,9 @@ const idJumbotronText = document.querySelector('#jumbotron-text')
 console.log(idJumbotronText)
 
 const pCprimaryContent = document.querySelectorAll('.primary-content p') 
-
+console.log(pCprimaryContent)
 //const pCprimaryContent = document.querySelector('.primary-content')   const pInside = pCprimaryContent.querySelectorAll('p')
 //const pCprimaryContent = document.querySelector('.primary-content').querySelectorAll('p')
-
-console.log(pCprimaryContent)
-
-
-
 
 
 /*
@@ -54,34 +49,13 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when 
 the 'Change colour' button is clicked.
-
-changeColorBtn.addEventListener('click', (event) => {
-    const assignBody = document.querySelector('body')
-    assignBody.style.backgroundColor = 'orange';})
 */
-const changeColorBtn = document.querySelector("#bgrChangeBtn")
-let index = 0;
-changeColorBtn.addEventListener('click', () => {
-    const colors = ['yellow', 'blue', 'orange', 'purple', '#69e8ec'];
+/*const changeColorBtn = document.querySelector("#bgrChangeBtn")
+
+   changeColorBtn.addEventListener('click', (event) => {
     const assignBody = document.querySelector('body')
-    if(index > (colors.length-1)){
-       index = 0;     
-    }
-    assignBody.style.backgroundColor = colors[index];
-    index ++;
-    })
-//= '#eceb8a'*/
+    assignBody.style.backgroundColor = 'orange';})*/
 
-
-/*
-Task 7
-======
-Create an array of 5 different colors.
-Using the same function in Task 3, every time the 'Change colour' button is clicked, 
-the background color will be changed with the next color in the array.
-The next color when you are in the last color of the array will be the first color again.
-*/
-//let colors = ['yellow', 'blue', 'orange', '#238d28', '#69e8ec']
 /*
 Task 4
 ======
@@ -121,12 +95,16 @@ Also clear the text inside the input field
 */
  const addButton = document.querySelector("#addArticleBtn")
 addButton.addEventListener('click', () =>{
-    document.getElementsByClassName('form-control').value = '';
-    const textInputF = document.createElement('p')
-    inputField.textContent = ''
     const whereIsShown = document.querySelector('#mainArticles')
+    const userText = document.querySelector('.addArticle').value;
+    const textInputF = document.createElement('p')
+    textInputF.textContent = userText
     whereIsShown.prepend(textInputF)
+    
 })
+const userText1 = document.getElementsByClassName('addArticle')
+userText1.innerHTML = ""
+/**/
 /*
 Task 7
 ======
@@ -136,3 +114,14 @@ the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
 
+const changeColorBtn = document.querySelector("#bgrChangeBtn")
+let index = 0;
+changeColorBtn.addEventListener('click', () => {
+    const colors = ['yellow', 'blue', 'orange', 'purple', '#69e8ec'];
+    const assignBody = document.querySelector('body')
+    if(index > (colors.length-1)){
+       index = 0;     
+    }
+    assignBody.style.backgroundColor = colors[index];
+    index ++;
+    })
