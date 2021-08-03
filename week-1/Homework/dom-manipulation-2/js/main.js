@@ -81,7 +81,7 @@ if ( validName && validDesc && validMail) {
     nameField.style.backgroundColor = 'white'                          
     describeYfield.style.backgroundColor = 'white'
 } 
-else {if(invalidMail && invalidName && invalidDesc)  
+else if(invalidMail && invalidName && invalidDesc)  
     {mailField.classList.add('redBackground');
     nameField.classList.add('redBackground');
     describeYfield.classList.add('redBackground')
@@ -95,8 +95,8 @@ else {if(invalidMail && invalidName && invalidDesc)
     else if(invalidMail && validName && validDesc){
     mailField.classList.add('redBackground')
 }  
-}}
-
+}
+//not quite describe me queda marcado en rojo 
 
 let submitBtn = document.querySelector('#submit')
 submitBtn.addEventListener('click', submitFunction)
