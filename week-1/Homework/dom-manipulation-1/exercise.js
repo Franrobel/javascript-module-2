@@ -56,8 +56,8 @@ the 'Change colour' button is clicked.
     const assignBody = document.querySelector('body')
     assignBody.style.backgroundColor = 'orange';})*/
 
-/*
-Task 4
+
+/*Task 4
 ======
 
 When a user clicks the ‘Add some text’ button, a new paragraph 
@@ -116,12 +116,16 @@ The next color when you are in the last color of the array will be the first col
 
 const changeColorBtn = document.querySelector("#bgrChangeBtn")
 let index = 0;
+
 changeColorBtn.addEventListener('click', () => {
     const colors = ['yellow', 'blue', 'orange', 'purple', '#69e8ec'];
     const assignBody = document.querySelector('body')
-    if(index > (colors.length-1)){
-       index = 0;     
+    
+    if(index > (colors.length-1)) {
+        index=0;
     }
+
+    // assignBody.style.backgroundColor = colors[index % colors.length];
     assignBody.style.backgroundColor = colors[index];
     index ++;
-    })
+})
