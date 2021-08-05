@@ -14,19 +14,29 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  const content = document.querySelector("#content");
+  let h1Elem = document.createElement('h1')
+  let h2Elem = document.createElement('h2')
+  content.prepend(h1Elem)
+  content.appendChild(h2Elem)
+ for( let i = 0; i < people[0].length; i++){
+                          //3
+  h1Elem.textContent == people[i].name 
+ }
+  
 }
+let people = [
+  { name: "Chris", job: "Teacher" },
+  { name: "Joanna", job: "Student" },
+  { name: "Boris", job: "Prime Minister" }
+];
+console.log(people[0].name, people[0].job)
+console.log(people[1].name, people[1].job)
+console.log(people[2].name, people[2].job)
 
-/**
- *
- * Create a list of shopping items. You should use an unordered list.
- *
- * All of your HTML should go inside the Div tag with the id "content".
- *
- */
-function exerciseTwo(shopping) {
-  //Write your code in here
-}
+exerciseOne(people);
+
+
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
@@ -57,32 +67,6 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-function exerciseThree(books) {
-  //Write your code in here
-}
-
-//
-//
-//
-//
-// DO NOT EDIT BELOW HERE
-//
-//
-//
-//
-
-let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
-];
-
-exerciseOne(people);
-
-let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
-
-exerciseTwo(shopping);
-
 const books = [
   {
     title: "The Design of Everyday Things",
@@ -102,3 +86,53 @@ const books = [
 ];
 
 exerciseThree(books);
+
+function exerciseThree(books) {
+  //Write your code in here
+}
+
+//
+//
+//
+//
+// DO NOT EDIT BELOW HERE
+//
+//
+//
+//
+
+/**
+ *
+ * Create a list of shopping items. You should use an unordered list.
+ *
+ * All of your HTML should go inside the Div tag with the id "content".
+ *
+ */
+ function exerciseTwo(shopping) {
+  const content = document.querySelector("#content");
+  let ulElem = document.createElement('ul')
+  content.appendChild(ulElem)
+  
+
+  //let shoppingLists = ulElem.appendChild(listElem)
+
+  for(let i = 0; i < shopping.length ; i++){
+    let listElem = document.createElement('li')
+    ulElem.appendChild(listElem)
+
+    listElem.innerHTML = shopping[i]     //ulElem.appendChild(shopping[i])
+   // console.log(shopping[i])
+
+   // listElem.shopping[i]
+    //console.log(listElem.shopping[i])
+                //[i] es cada item del array
+  }
+
+  //Write your code in here
+
+}
+
+let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
+//console.log(shopping.slice(0,7))
+exerciseTwo(shopping);
+
