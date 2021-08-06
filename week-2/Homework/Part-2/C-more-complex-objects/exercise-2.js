@@ -23,9 +23,15 @@ let newCurrentOwner = {
 
   WRITE YOUR CODE BELOW
 */
-
+house.currentOwner = newCurrentOwner
 // - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
+house.previousOwners[1] = " Stephen B.";
 // - from the list of previous owners, replace only "John A." with "Stephen B."
+
+house.isForSale = false
+//Object.defineProperty(house, "isForSale", {value: false})
+
+
 // - give the house a new property called 'isForSale' with the value 'false'
 
 /*
@@ -37,6 +43,6 @@ console.log(
   }`
 );
 console.log(
-  `Expected result: Claire M., Stephen B. Actual result: ${house.previousOwners.toString()}`
+ `Expected result: Claire M., Stephen B. Actual result: ${house.previousOwners.toString()}`
 );
 console.log(`Expected result: false. Actual result: ${house.isForSale}`);

@@ -25,11 +25,11 @@ WRITE YOUR CODE BELOW
 */
 
 
-let persons = // Complete here
+let persons = [person1, person2, person3]// Complete here
 
-let personNames = // Complete here
+let personNames = persons.map((person)=> person.name)// Complete here
 
-let personsYoungerThan28YearsOld = // Complete here
+let personsYoungerThan28YearsOld = persons.filter((person) => person.age < 28 )// Complete here
 
 
 /*
@@ -44,3 +44,4 @@ console.log("Question 2: array containing the person names -> ",
 
 console.log("Question 3: array containing the persons younger than 28 years old -> ",
     (personsYoungerThan28YearsOld[0] === person1 && personsYoungerThan28YearsOld[1] === person3) ? 'Passed :)' : 'Not yet :(');
+    

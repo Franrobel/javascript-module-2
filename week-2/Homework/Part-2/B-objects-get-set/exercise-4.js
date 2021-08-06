@@ -3,8 +3,8 @@
 */
 
 var dog = {
-    name: 'Billy',
-    wantsToPlay: false
+    name: 'Rex',
+    wantsToPlay: true
 };
 
 // WRITE CODE HERE

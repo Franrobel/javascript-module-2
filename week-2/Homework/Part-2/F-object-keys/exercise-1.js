@@ -20,10 +20,10 @@ let highScores = {
 
 // ONLY EDIT BELOW HERE
 
-let capitalCitiesKeys = ;
-let highScoresKeys = ;
-let capitalCitiesValues = ;
-let highScoresValues = ;
+let capitalCitiesKeys = capitalCities.map(() => );
+//let highScoresKeys = ;
+//let capitalCitiesValues = ;
+//let highScoresValues = ;
 
 // ONLY EDIT ABOVE HERE
 

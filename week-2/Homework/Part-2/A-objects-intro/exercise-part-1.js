@@ -16,4 +16,10 @@ var car = {
 };
 
 */
+var myDog = {
+    breed: "border collie",
+    color: "black and white",
+}
+
+
 
