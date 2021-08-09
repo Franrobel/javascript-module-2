@@ -60,11 +60,11 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-        if (this.restaurants.restaurants.totalSeats - this.restaurants.restaurants.numberOfCustomers == numberOfPeople){
-          return this.restaurants.restaurants.name
+        if (this.restaurants.restaurants - this.restaurants.restaurants == numberOfPeople){
+          return this.restaurants.name
         }       // Complete here
        // console.log(restaurantFinderApplication.restaurants[numberOfPeople])
-
+console.log(this.restaurants.totalSeats)
       },
     findRestaurantServingDish: function (dishName) {
       // Complete here
