@@ -35,7 +35,6 @@ let restaurant1 = {
     },
     menu: ["salad", "chocolate cake", "roast lamb"],
   };
-  
   let restaurant3 = {
     name: "Monkeyz",
     totalSeats: 15,
@@ -46,9 +45,7 @@ let restaurant1 = {
     },
     menu: ["stew", "chocolate cake", "panini"],
   };
-
   let restaurants = [restaurant1, restaurant2, restaurant3];
-
   /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
   WRITE YOUR CODE BELOW
@@ -61,13 +58,13 @@ let restaurant1 = {
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
       for (let i = 0; i < this.restaurants.length; i++) {
-
-        if (this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers == numberOfPeople){
-          return this.restaurants[i].name
-        } 
+//console.log(this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers > numberOfPeople)
+//console.log(this.restaurants[i].totalSeats)
+     if ((this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers) > numberOfPeople){
+    return this.restaurants[i].name;
+      } 
       } 
             // Complete here
-       // console.log(restaurantFinderApplication.restaurants[numberOfPeople])
       },
     findRestaurantServingDish: function (dishName) {
       // Complete here
