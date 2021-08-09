@@ -46,29 +46,34 @@ let restaurant1 = {
     },
     menu: ["stew", "chocolate cake", "panini"],
   };
-  
+
   let restaurants = [restaurant1, restaurant2, restaurant3];
-  
+
   /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
   WRITE YOUR CODE BELOW
   */
-  
+  //1) Define a method findAvailableRestaurants which takes a number of people in parameter and returns
+  //  all the restaurant names which have the required number of seats available at the moment.
   let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
-    },
+        if (this.restaurants.restaurants.totalSeats - this.restaurants.restaurants.numberOfCustomers == numberOfPeople){
+          return this.restaurants.restaurants.name
+        }       // Complete here
+       // console.log(restaurantFinderApplication.restaurants[numberOfPeople])
+
+      },
     findRestaurantServingDish: function (dishName) {
       // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
       // Complete here
     },
+
   };
-  
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */

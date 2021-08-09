@@ -29,6 +29,7 @@ let persons = [person1, person2, person3]// Complete here
 
 let personNames = persons.map((person)=> person.name)// Complete here
 
+
 let personsYoungerThan28YearsOld = persons.filter((person) => person.age < 28 )// Complete here
 
 
