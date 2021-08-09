@@ -61,10 +61,11 @@ let restaurant1 = {
 //console.log(this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers > numberOfPeople)
 //console.log(this.restaurants[i].totalSeats)
      if ((this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers) > numberOfPeople){
-    return this.restaurants[i].name;
-      } 
-      } 
-            // Complete here
+      console.log(this.restaurants[i].name)
+
+    } 
+      }  
+      // Complete here
       },
     findRestaurantServingDish: function (dishName) {
       // Complete here

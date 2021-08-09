@@ -44,12 +44,13 @@ function getEmailAddresses(house1, house2) {
 }
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {
-  const price1 = house1.price;
-  const price2 =house2.price;
-  if(price1 < price2){
-    
-  }
+function getCheapestAddress( house1, house2) {
+  const price1 = house1.price; 
+  const price2 = house2.price; 
+
+if(price1 > price2){
+return house2.address
+}
 }
 
 /*

@@ -104,4 +104,5 @@ var mentors = [
 mentors that are in Barcelona and one of the skills is React
 "Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React."
 */
-const mentorsInBarcelona = mentors.filter()
+//const mentorsInBarcelona = mentors.filter(() => mentors.city['Barcelona'])
+console.log(mentors[job])
