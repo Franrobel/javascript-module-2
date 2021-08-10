@@ -16,14 +16,14 @@ let sequence = [1, 2, 3];
 sequence.push(4);
 sequence.push(5);
 console.log(sequence);
-// → [1, 2, 3, 4, 5]
-
-3. Create an object method with the name .addSkill() to be able to add skills from it
-
-4. Create a function to add a skill to all members in a list of mentors
-
-function addSkill(mentors,newSkill){
   //your code here
+}
+3.Create an Object method with the name .addSkill() to be able to add Skills from it 
+
+4.Create a function to add a Skill to all members in a list of mentors 
+
+function addSkill (mentors, newSkill){
+
 }
 
 5. Create a function to remove a skill to all members in a list of mentors
@@ -100,9 +100,54 @@ var mentors = [
 
 //YOUR CODE HERE
 /*
-1. Loop through the array, and for each object, `console.log()` out the sentence only for
-mentors that are in Barcelona and one of the skills is React
-"Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React."
+
+
+/*mentors.forEach(mentorInBarReact => { if (mentorInBarReact.job.city == 'Barcelona' && mentorInBarReact.skills.includes("React")) {
+
+  //console.log(`Hi, my name is ${mentorInBarReact.firstName} ${mentorInBarReact.lastName}. I work in Barcelona and i know React.`)
+}})*/
+//ARRIBA hago filter en el mismo .forEach
+//ABAJO el forEach lo hago a la variable donde filtre mentors
+let mentorsBarcelonaReact = mentors.filter(mentor => mentor.job.city == 'Barcelona' && mentor.skills.includes("React"))
+    mentorsBarcelonaReact.forEach(mentor => 
+    console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`))
+
+/*   mentorsBarcelonaReact.map(mentor => {
+     mentor.class = "Jun1";
+     mentor.skills.push('SQL')})
+console.log(mentors)
+
+//ABAJO a cada uno de los objetos en el arreglo mentors le vamos a poder agregar una nueva skill invocacando la funcion .addSkills()
+mentors.forEach(mentor => 
+  mentor.addSkills = function(skill){
+    this.skills.push(skill)
+  })
+
+//4.Create a function to add a Skill to all members in a list of mentors 
+
+function addSkill(mentors, skill){
+    mentors.forEach(mentor => mentor.skills.push(skill))
+}
+
+//5. Create a function to remove a skill to all members in a list of mentors
 */
-//const mentorsInBarcelona = mentors.filter(() => mentors.city['Barcelona'])
-console.log(mentors[job])
+function removeSkill(mentors,skill){
+  mentors.forEach(mentor=> {
+const skillPosition = mentor.skills.findIndex(mentorSkill => mentorSkill === skill)
+console.log(skillPosition)
+if(skillPosition != -1){
+  mentor.skills.splice(skillPosition, 1)
+
+}
+
+  //your code here
+})}
+//removeSkill(mentors, 'Node',)
+console.log(mentors[0])
+//6. Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills
+
+function mentorWithMoreSkills(firstName, lastName){
+  if(mentors.skills){
+
+  }
+}

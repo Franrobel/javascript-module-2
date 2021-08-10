@@ -57,22 +57,31 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
+      let restNames = []
       for (let i = 0; i < this.restaurants.length; i++) {
-//console.log(this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers > numberOfPeople)
-//console.log(this.restaurants[i].totalSeats)
-     if ((this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers) > numberOfPeople){
-      console.log(this.restaurants[i].name)
 
-    } 
+        if ((this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers) > numberOfPeople){
+      restNames.push(this.restaurants[i].name)
+        } 
       }  
-      // Complete here
-      },
+     return restNames // Complete here
+   },
+   //2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
+    //  all the restaurant names serving this dish.
     findRestaurantServingDish: function (dishName) {
-      // Complete here
-    },
+      let restNames = []
+      restaurants.forEach(restaurantDish => { if (restaurantDish.menu.includes(dishName)){
+      restNames.push(restaurantDish.name)      }// Complete here
+    }
+    )
+    return restNames
+  },
+  //3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (center, west),
+//and returns the number of restaurants in this area.
     countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
-    },
+    return restaurants.filter(restInArea => restInArea.address.area == area).length; // ES EL LENGTH DEL FILTER NO DE LAS AREAS?
+    // Complete here
+    }
 
   };
   /*
