@@ -11,7 +11,9 @@ Create a function called "showMovies" that
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
-- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+- it receives a movie object as an argument - your can create a new object for your favorite movie 
+following using
+ the "myMovies" objects as a guide 
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
@@ -59,7 +61,43 @@ var movies = [
 ];
 
 // create showMovies function
+let moviesShown = function showMovies() {
+  movies.forEach(movie => {
+  let pElem = document.createElement("p");
+  pElem.innerHTML = `${movie.title}, ${movie.director}`;
+  let divAllmovies = document.getElementById("all-movies");
+  divAllmovies.appendChild(pElem);
+  let movieNspan = document.getElementById("movies-number");
+  movieNspan.innerHTML = movies.length;
+    }
+  )
+}
+let btnTime = document.createElement('button')
+btnTime.innerHTML = 'Movies'
+let divAllmovies = document.getElementById("all-movies");
+divAllmovies.appendChild(btnTime);
 
+btnTime.addEventListener('click', myFunction())
+
+function myFunction() {
+  setTimeout(function()
+  { moviesShown(); }, 1000);
+}
+
+
+function addMovie(movies){
+  movies.push({
+    title: "The Tree of Life",
+    director: "Terrence Malick",
+    type: "drama",
+    haveWatched: true,
+  },)
+
+}
+function addFavoriteMovie() {
+  setTimeout(function()
+  { addMovie(); }, 2000);
+}
 
 // create a new movie object for your favorite movie
 
