@@ -133,6 +133,5 @@ btn.addEventListener('click', (e) => {
   }
 )
 
-//console.log(title.innerHTML = title.value)
 
 
