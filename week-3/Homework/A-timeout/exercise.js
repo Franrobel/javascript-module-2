@@ -7,18 +7,16 @@ Using setTimeout, change the background colour of the page after 5 seconds (5000
 Hint: try searching for setTimeout. (https://www.w3schools.com/jsref/met_win_settimeout.asp)
 
 Task 2
-Update your code to make the colour change every 5 seconds to something different. Hint: try searching for setInterval. (https://www.w3schools.com/jsref/met_win_setinterval.asp)
+Update your code to make the colour change every 5 seconds to something
+ different. Hint: try searching for setInterval. (https://www.w3schools.com/jsref/met_win_setinterval.asp)
 ================
 */
 
 
-  let changeColorBody = document.getElementsByTagName("body");
-  let buttonColor = document.createElement('button')
-  changeColorBody.appendChild(buttonColor)
+// setTimeout(function() { document.body.style.backgroundColor = "green"; }, 5000)
 
- function changeBc() {
-    setTimeout(function() {   
-    document.body.style.backgroundColor = "green";
-}, 5000,)
-  }
+const ref = setInterval(function() {
+  document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}`
+}, 1000);
 
+setTimeout(() => clearInterval(ref), 10000)

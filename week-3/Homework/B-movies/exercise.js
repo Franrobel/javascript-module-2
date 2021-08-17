@@ -13,7 +13,7 @@ Amend your function above to only show movies after 1 second. Remember to use se
 Create a new function called "addMovie"
 - it receives a movie object as an argument - your can create a new object for your favorite movie 
 following using
- the "myMovies" objects as a guide 
+ the "movies" objects as a guide 
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
@@ -62,44 +62,77 @@ var movies = [
 
 // create showMovies function
 let moviesShown = function showMovies() {
-  movies.forEach(movie => {
-  let pElem = document.createElement("p");
-  pElem.innerHTML = `${movie.title}, ${movie.director}`;
-  let divAllmovies = document.getElementById("all-movies");
-  divAllmovies.appendChild(pElem);
-  let movieNspan = document.getElementById("movies-number");
-  movieNspan.innerHTML = movies.length;
+  movies.forEach((movie, index) => {
+      setTimeout(() => {
+        let divAllmovies = document.getElementById("all-movies");
+        let pElem = document.createElement("p");
+        divAllmovies.appendChild(pElem);
+        pElem.innerHTML = `${movie.title}, ${movie.director}`;
+        let movieNspan = document.getElementById("movies-number");
+        movieNspan.innerHTML = movies.length;
+      }, 1000 * (index + 1))
     }
   )
 }
-let btnTime = document.createElement('button')
-btnTime.innerHTML = 'Movies'
-let divAllmovies = document.getElementById("all-movies");
-divAllmovies.appendChild(btnTime);
 
-btnTime.addEventListener('click', myFunction())
 
-function myFunction() {
-  setTimeout(function()
-  { moviesShown(); }, 1000);
+function addMovie(movie, callback) {
+  setTimeout(function () {
+    movies.push(movie)
+    callback()
+  }, 2000)
 }
 
+addMovie({
+  title: "The Tree of Life",
+  director: "Terrence Malick",
+  type: "drama",
+  haveWatched: true,
+}, () => { moviesShown() })
 
-function addMovie(movies){
-  movies.push({
-    title: "The Tree of Life",
-    director: "Terrence Malick",
-    type: "drama",
-    haveWatched: true,
-  },)
-
-}
-function addFavoriteMovie() {
-  setTimeout(function()
-  { addMovie(); }, 2000);
-}
-
-// create a new movie object for your favorite movie
+console.log(addMovie)
 
 
-// create addMovies function
+const formAddMovie = document.createElement("form");
+
+const title = document.createElement("input"); //input element, text
+title.setAttribute('type',"text");
+formAddMovie.appendChild(title);
+const director  = document.createElement("input");
+director.setAttribute('type',"text");
+formAddMovie.appendChild(director);
+const type = document.createElement("input");
+type.setAttribute('type',"text");
+formAddMovie.appendChild(type);
+const haveWatched = document.createElement("input");
+haveWatched.setAttribute('type',"text");
+formAddMovie.appendChild(haveWatched);
+const btn = document.createElement('button')
+btn.innerHTML = 'SAVE'
+formAddMovie.appendChild(btn)
+title.style.display = 'block'
+title.style.marginBottom = '10px'
+director.style.display = 'block'
+director.style.marginBottom = '10px'
+type.style.display = 'block'
+type.style.marginBottom = '10px'
+haveWatched.style.display = 'block'
+haveWatched.style.marginBottom = '10px'
+
+btn.style.display = 'block'
+
+const formInBody = document.getElementsByTagName("body")[0].appendChild(formAddMovie);
+
+btn.addEventListener('click', (e) => {
+  e.preventDefault();
+    console.log(title.innerHTML = title.value)
+    console.log(director.innerHTML = director.value)
+    console.log(type.innerHTML = type.value)
+    console.log(haveWatched.innerHTML = haveWatched.value)
+
+  }
+)
+
+//console.log(title.innerHTML = title.value)
+
+
