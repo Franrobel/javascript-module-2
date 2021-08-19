@@ -90,7 +90,7 @@ addMovie({
   haveWatched: true,
 }, () => { moviesShown() })
 
-console.log(addMovie)
+console.log(addMovie())
 
 
 const formAddMovie = document.createElement("form");
@@ -125,6 +125,7 @@ const formInBody = document.getElementsByTagName("body")[0].appendChild(formAddM
 
 btn.addEventListener('click', (e) => {
   e.preventDefault();
+  addMovie
     console.log(title.innerHTML = title.value)
     console.log(director.innerHTML = director.value)
     console.log(type.innerHTML = type.value)
@@ -133,5 +134,6 @@ btn.addEventListener('click', (e) => {
   }
 )
 
+//console.log(title.innerHTML = title.value)
 
 
