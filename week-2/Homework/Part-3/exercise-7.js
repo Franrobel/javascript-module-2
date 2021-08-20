@@ -9,11 +9,30 @@ the list of available products and the list of products introduced in the shoppi
 1. Fill the products list with at least 4 products, what attributes de we have? 
 at least should have:
 var product = {
-  id:
-  name:
-  price:
-  stock:
+  id: 10,
+  name: "milk",
+  price: 1.05,
+  stock: 20,
+};
+{
+  id: 11,
+  name: "honey",
+  price: 2.30,
+  stock: 19,
+};
+{
+  id: 12,
+  name: "jam",
+  price: 3.10,
+  stock: 120,
+};
+{
+  id: 13,
+  name: "sugar",
+  price: 0.65,
+  stock: 3,
 }
+
 id is a unique number that identifies each product
 
 3. Create a function addToShoppingCart to add a product to the shopping cart list giving the product id,

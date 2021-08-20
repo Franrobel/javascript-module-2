@@ -108,13 +108,13 @@ var mentors = [
 }})*/
 //ARRIBA hago filter en el mismo .forEach
 //ABAJO el forEach lo hago a la variable donde filtre mentors
-let mentorsBarcelonaReact = mentors.filter(mentor => mentor.job.city == 'Barcelona' && mentor.skills.includes("React"))
+/*let mentorsBarcelonaReact = mentors.filter(mentor => mentor.job.city == 'Barcelona' && mentor.skills.includes("React"))
     mentorsBarcelonaReact.forEach(mentor => 
     console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`))
 
-/*   mentorsBarcelonaReact.map(mentor => {
-     mentor.class = "Jun1";
-     mentor.skills.push('SQL')})
+ mentorsBarcelonaReact.map(mentor => {
+    if(mentor.class = "Jun1")
+     {mentor.skills.push('SQL')}})
 console.log(mentors)
 
 //ABAJO a cada uno de los objetos en el arreglo mentors le vamos a poder agregar una nueva skill invocacando la funcion .addSkills()
@@ -127,10 +127,8 @@ mentors.forEach(mentor =>
 
 function addSkill(mentors, skill){
     mentors.forEach(mentor => mentor.skills.push(skill))
-}
-
+}*/
 //5. Create a function to remove a skill to all members in a list of mentors
-*/
 function removeSkill(mentors,skill){
   mentors.forEach(mentor=> {
 const skillPosition = mentor.skills.findIndex(mentorSkill => mentorSkill === skill)
@@ -139,15 +137,41 @@ if(skillPosition != -1){
   mentor.skills.splice(skillPosition, 1)
 
 }
-
   //your code here
 })}
+console.log(mentors)
+
 //removeSkill(mentors, 'Node',)
-console.log(mentors[0])
+//console.log(mentors[0])
 //6. Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills
 
-function mentorWithMoreSkills(firstName, lastName){
-  if(mentors.skills){
+/*function mentorWithMoreSkills(mentors){
+  let result = 0;
+  let indexMentor = 0;
+  mentors.forEach((mentor, index) => {
+    if (result > mentor.skills.length){
+      result = mentor.skills.length;
+      indexMentor = index;
+    }
 
+    console.log(mentor.skills.length)
   }
+  )
+  return mentors[indexMentor]
 }
+mentorWithMoreSkills(mentors)
+
+
+//7. Create an object method .addStudentLikes() that increments by one the attribute studentLikes
+
+mentors.forEach(mentor => 
+  mentor.addStudentsLikes = function(){
+    this.studentLikes++
+  })
+
+mentors[0].addStudentsLikes()
+console.log(mentors[0])
+
+function addStudentLikes (mentors){
+  mentors.forEach(mentor => mentor.studentLikes++)
+}*/
