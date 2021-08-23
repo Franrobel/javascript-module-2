@@ -119,7 +119,7 @@ type.style.marginBottom = '10px'
 haveWatched.style.display = 'block'
 haveWatched.style.marginBottom = '10px'
 
-btn.style.display = 'block'
+btn.style.display = 'flex'
 
 const formInBody = document.getElementsByTagName("body")[0].appendChild(formAddMovie);
 
