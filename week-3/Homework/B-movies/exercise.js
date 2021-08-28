@@ -90,13 +90,14 @@ addMovie({
   haveWatched: true,
 }, () => { moviesShown() })
 
-console.log(addMovie())
 
 
 const formAddMovie = document.createElement("form");
 
 const title = document.createElement("input"); //input element, text
 title.setAttribute('type',"text");
+title.setAttribute('placeholder', "title");
+
 formAddMovie.appendChild(title);
 const director  = document.createElement("input");
 director.setAttribute('type',"text");
@@ -104,8 +105,11 @@ formAddMovie.appendChild(director);
 const type = document.createElement("input");
 type.setAttribute('type',"text");
 formAddMovie.appendChild(type);
+const haveWatchedText = document.createElement("p")
+haveWatchedText.innerText = "Have watched?" 
 const haveWatched = document.createElement("input");
-haveWatched.setAttribute('type',"text");
+haveWatched.setAttribute('type',"checkbox");
+formAddMovie.appendChild(haveWatchedText)
 formAddMovie.appendChild(haveWatched);
 const btn = document.createElement('button')
 btn.innerHTML = 'SAVE'
@@ -119,18 +123,22 @@ type.style.marginBottom = '10px'
 haveWatched.style.display = 'block'
 haveWatched.style.marginBottom = '10px'
 
-btn.style.display = 'flex'
+btn.style.display = 'block'
 
-const formInBody = document.getElementsByTagName("body")[0].appendChild(formAddMovie);
+const formInBody = document.querySelector("body").appendChild(formAddMovie);
 
 btn.addEventListener('click', (e) => {
   e.preventDefault();
-  addMovie
-    console.log(title.innerHTML = title.value)
-    console.log(director.innerHTML = director.value)
-    console.log(type.innerHTML = type.value)
-    console.log(haveWatched.innerHTML = haveWatched.value)
-
+  addMovie({
+    title: title.value,
+    director: director.value, 
+    type: type.value,
+    haveWatched: haveWatched.checked
+  }, () => {
+document.querySelector("#all-movies").querySelectorAll("p").forEach( (element) => {
+    element.innerHTML = "";
+}) 
+    moviesShown()})
   }
 )
 
