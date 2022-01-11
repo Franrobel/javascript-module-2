@@ -16,10 +16,18 @@ var car = {
 };
 
 */
-var myDog = {
+const objects = [
+myDog = {
     breed: "border collie",
     color: "black and white",
+    height: "90cm",
+    weight: "30kg"
+}, 
+ table = {
+    color: "blue", 
+    legs: "4", 
+    height: "1 meter"
 }
+]
 
-
-
+console.log(objects)
